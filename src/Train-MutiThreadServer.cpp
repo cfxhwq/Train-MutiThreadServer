@@ -103,7 +103,7 @@ void process_cli(int connectfd, struct sockaddr_in client) {
 	printf("client name: %s,len:%d\n", cli_name, num);
 	while (num = recv(connectfd, recvbuf, MAXDATASIZE, 0)) {
 		recvbuf[num] = '\0';
-		printf("Msg: %s,len:%d\n", recvbuf, num);
+		printf("client:%s Msg: %s,len:%d\n", cli_name, recvbuf, num);
 		int i = 0;
 		for (i = 0; i < num; ++i) {
 			sendbuf[i] = recvbuf[num - i - 1];
